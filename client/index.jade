@@ -1,0 +1,20 @@
+doctype html
+html(ng-app='MyApp')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Apollo
+    link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
+    link(rel='shortcut icon', href='/favicon.ico')
+  body
+    .container
+      div(ui-view)
+    script(src='/vendor/lodash/lodash.min.js')
+    script(src=isProd ? '/vendor/angular/angular.min.js' : '/vendor/angular/angular.js')
+    script(src=isProd ? '/vendor/angular-ui-router/release/angular-ui-router.min.js' : '/vendor/angular-ui-router/release/angular-ui-router.js')
+    script(src=isProd ? '/index.min.js' : '/index.js')
+    script(src=isProd ? '/vendor/jquery/dist/jquery.min.js' : '/vendor/jquery/dist/jquery.js')
+    script(src=isProd ? '/vendor/bootstrap/dist/js/bootstrap.min.js' : '/vendor/bootstrap/dist/js/bootstrap.js')

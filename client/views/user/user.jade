@@ -1,0 +1,24 @@
+#info.text-center
+  img.img-circle(src='{{user.avatar_url}}', width='100', height='100')
+  h4 {{user.name}}
+  h5 {{user.company}}
+  h5 {{user.location}}
+  .col-md-12(style='margin: 20px 0;')
+    a.button(href='{{user.followers_url}}') {{user.followers}} Followers
+    a.button(href='{{user.following_url}}') Following {{user.following}}
+  
+#repos
+  table.table
+    thead
+      tr
+        th Name
+        th Url
+        th Created
+        th Status
+    tbody
+      tr(ng-repeat='events in user.events')
+        th(scope="row") {{events.repo.name}}
+        td: a(href='{{events.repo.url}}') Url
+        td {{events.created_at | date : format : medium}}
+        td(ng-if='events.public') Public
+        td(ng-if='events.!public') Private

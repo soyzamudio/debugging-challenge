@@ -1,0 +1,10 @@
+#home
+  table.table
+    thead
+      tr
+        th Handler
+        th Url
+    tbody
+      tr(ng-repeat='user in users')
+        th(scope="row"): a(ui-sref='user({user: user.login})') {{user.login}}
+        td {{user.html_url}}
